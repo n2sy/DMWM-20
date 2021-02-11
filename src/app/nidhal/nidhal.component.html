@@ -1,0 +1,18 @@
+<h2> Je suis {{ name }} </h2>
+
+<div [hidden]="hd" [style.backgroundColor]="color">
+    Cours d'Angular
+</div>
+
+<button (click)="showAlert()" class="btn btn-primary">Valider</button>
+<br>
+
+Name : <br>
+<input [(ngModel)]="name" type="text" class="form-control">
+
+<button (click)="hideDiv()" class="btn btn-danger">Hide / Show</button>
+
+<br>
+
+<button class="btn btn-warning" (click)="msgSend()">Send Msg</button>
+
