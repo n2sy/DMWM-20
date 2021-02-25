@@ -11,8 +11,10 @@ Background Color : <br>
 <input [(ngModel)]="bgColor" type="text" class="form-control">
 Color : <br>
 <input [(ngModel)]="color" type="text" class="form-control">
+
 Font Size : <br>
-<input [(ngModel)]="size" type="number" class="form-control">
+<input #in (change)="changeSize(in.value)" type="number" class="form-control">
+
 Font Family : 
 <select class="form-control" [(ngModel)]="font">
     <option *ngFor="let f of listeFonts" [value]="f">{{ f }}</option>

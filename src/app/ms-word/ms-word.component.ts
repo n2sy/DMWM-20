@@ -9,11 +9,16 @@ export class MsWordComponent implements OnInit {
   listeFonts = ['', 'Impact', 'Garamond', 'Phosphate'];
   bgColor : string;
   color;
-  size;
+  size : string;
   font;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeSize(inputValue) {
+    this.size = inputValue + 'px';
+    
   }
 
 }

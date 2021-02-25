@@ -11,6 +11,7 @@ import { ItemComponent } from './item/item.component';
 import { DetailComponent } from './detail/detail.component';
 import { DirectComponent } from './direct/direct.component';
 import { MsWordComponent } from './ms-word/ms-word.component';
+import { ManageServersComponent } from './manage-servers/manage-servers.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MsWordComponent } from './ms-word/ms-word.component';
     ItemComponent,
     DetailComponent,
     DirectComponent,
-    MsWordComponent
+    MsWordComponent,
+    ManageServersComponent
   ],
   imports: [
     BrowserModule,
