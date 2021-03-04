@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Server } from 'http';
 import { Serveur } from '../model/serveur';
 
 @Component({
@@ -8,6 +7,12 @@ import { Serveur } from '../model/serveur';
   styleUrls: ['./manage-servers.component.css']
 })
 export class ManageServersComponent implements OnInit {
+  myPromise = new Promise((resolve, reject) => {
+    setTimeout(()=> {
+      resolve("DMWM")
+    }, 3000)
+  })
+  selectedStatus : string = "";
   listServers = [
     new Serveur("Production Server", "small", "critical", new Date(2021, 2, 10)),
     new Serveur("Testing Server", "medium", "stable", new Date(2020, 2, 10)),
@@ -25,6 +30,13 @@ export class ManageServersComponent implements OnInit {
       'list-group-item-danger' : myStatus == 'critical',
       'list-group-item-warning' : myStatus == 'offline'
     }
+  }
+
+  addNewServer() {
+    this.listServers.push(
+      new Serveur("New Server !", "medium", "stable", new Date(2020, 2, 10)),
+
+    )
   }
 
 }

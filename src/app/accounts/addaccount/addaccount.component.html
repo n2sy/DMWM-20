@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-8">
+        Account Name : <br>
+        <input [(ngModel)]="name" type="text" class="form-control">
+        Status : <br>
+        <select class="form-control" [(ngModel)]="status">
+            <option *ngFor="let s of allStatus" [value]="s">{{s}}</option>
+        </select>
+        <button (click)="addNewAccount()" class="btn btn-primary">Add Account</button>
+    </div>
+</div>

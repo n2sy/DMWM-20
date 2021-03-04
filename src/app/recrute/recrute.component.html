@@ -1,0 +1,10 @@
+<div *ngIf="listRecrues.length">
+    <h4>Liste des Recrues</h4>
+    <ol class="list-group">
+        <li *ngFor="let rec of listRecrues" class="list-group-item">
+            <img src="../../assets/{{rec.avatar}}"> 
+    {{rec.prenom | titlecase }} {{rec.nom | titlecase}}
+        </li>
+    </ol>
+
+</div>

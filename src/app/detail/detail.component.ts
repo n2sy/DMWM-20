@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Personne } from '../model/personne';
+import { RecrueService } from '../recrue.service';
 
 @Component({
   selector: 'app-detail',
@@ -8,9 +9,13 @@ import { Personne } from '../model/personne';
 })
 export class DetailComponent implements OnInit {
   @Input() persSelected : Personne;
-  constructor() { }
+  constructor(private recService : RecrueService) { }
 
   ngOnInit(): void {
+  }
+
+  ajouterRecrue() {
+    this.recService.addRecrue(this.persSelected);
   }
 
 }
