@@ -5,7 +5,7 @@
                 <img src="../../assets/rotating_card_thumb2.png">
             </div>
             <div class="user">
-                <img class="img-circle" src="../../assets/{{persSelected.avatar}}">
+                <img class="img-circle" src="../../assets/{{persSelected.avatar | noImage}}">
             </div>
             <div class="content">
                 <div class="main">
@@ -53,6 +53,7 @@
             <div class="footer">
                 <div class="social-links text-center">
                     <button (click)="ajouterRecrue()" class="btn btn-success">Recruter</button>
+                    <button (click)="goDetails()" class="btn btn-success">+ Details</button>
                 </div>
             </div>
         </div> <!-- end back panel -->

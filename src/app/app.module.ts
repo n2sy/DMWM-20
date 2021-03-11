@@ -21,6 +21,15 @@ import { RecruteComponent } from './recrute/recrute.component';
 import { AddaccountComponent } from './accounts/addaccount/addaccount.component';
 import { ListaccountComponent } from './accounts/listaccount/listaccount.component';
 import { HomeaccountComponent } from './accounts/homeaccount/homeaccount.component';
+import { HomeComponent } from './home/home.component';
+import { DMWM_ROUTING } from './app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
+import { InfosComponent } from './infos/infos.component';
+import { AddComponent } from './add/add.component';
+import { UpdateComponent } from './update/update.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NoImagePipe } from './no-image.pipe';
+
 
 @NgModule({
   declarations: [
@@ -40,11 +49,19 @@ import { HomeaccountComponent } from './accounts/homeaccount/homeaccount.compone
     RecruteComponent,
     AddaccountComponent,
     ListaccountComponent,
-    HomeaccountComponent
+    HomeaccountComponent,
+    HomeComponent,
+    NavbarComponent,
+    InfosComponent,
+    AddComponent,
+    UpdateComponent,
+    NotFoundComponent,
+    NoImagePipe
   ],
   imports: [
-    BrowserModule,
-    FormsModule
+  BrowserModule,
+    FormsModule,
+    DMWM_ROUTING
   ],
   providers: [FirstServiceService, SecondService],
   bootstrap: [AppComponent]
