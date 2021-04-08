@@ -29,6 +29,7 @@ import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoImagePipe } from './no-image.pipe';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { NoImagePipe } from './no-image.pipe';
     AddComponent,
     UpdateComponent,
     NotFoundComponent,
-    NoImagePipe
+    NoImagePipe,
+    LoginComponent
   ],
   imports: [
   BrowserModule,

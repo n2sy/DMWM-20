@@ -1,0 +1,52 @@
+<form #f="ngForm" (ngSubmit)="showForm(f)">
+    <!-- <input ngModel #exp="ngModel" required minlength="5" pattern="nidhal" type="text" class="form-control" name="example">
+    <div class="alert alert-danger" *ngIf="exp.invalid">
+        <p *ngIf="exp.errors.required">Ce champ est obligatoire</p>
+        <p *ngIf="exp.errors.minlength">Le nombre de caractères minimum est 5</p>
+        <p *ngIf="exp.errors.pattern">Le pattern est "nidhal"</p>
+
+    </div> -->
+
+    <!-- <div ngModelGroup="identifiants" #ident="ngModelGroup">
+        <label for="login">Login</label>
+        <input ngModel #in="ngModel" required email type="text" class="form-control" name="login" id="login">
+    
+    
+        <label for="pwd">Mot de passe</label>
+        <input ngModel minlength="6" type="text" class="form-control" name="password" id="pwd">
+    
+    </div>
+
+    <div *ngIf="ident.invalid && ident.touched" class="alert alert-danger">Login ou/et Mot de passe invalides</div>
+     -->
+    <label for="login">Login</label>
+    <input ngModel #in="ngModel" required email type="text" class="form-control" name="login" id="login">
+    <div *ngIf="!in.valid && in.touched" class="alert alert-danger">Veuillez saisir une adresse mail valide</div>
+
+
+    <label for="pwd">Mot de passe</label>
+    <input ngModel type="text" class="form-control" name="password" id="pwd">
+
+    <!-- <label for="section">Section</label>
+    <select class="form-control" [ngModel]="defaultSection" name="section" id="section">
+        <option value="gl">Génie Logiciel</option>
+        <option value="dsen">Data Science</option>
+        <option value="dmwm">Développement mobile</option>
+    </select>
+    {{ defaultSection }}
+    <label for="comment">commentaire</label>
+    <input [(ngModel)]="defaultComment" type="text" class="form-control" name="comment" id="comment">
+    <br>
+    {{ defaultComment }}
+    <br>
+    <pre>
+        {{ f.value | json}}
+    </pre>
+ -->
+
+<br>
+    <button [disabled]="f.invalid" class="btn btn-primary">Submit</button>
+    <!-- <button (click)="resetForm(f)" class="btn btn-danger">Reset</button>
+    <button (click)="generatePwd(f)" class="btn btn-info">Generate PWD</button>
+    <button (click)="generatePwdII(f)" class="btn btn-success">Generate PWD II</button> -->
+</form>
