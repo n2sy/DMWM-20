@@ -6,8 +6,7 @@ import { Personne } from '../model/personne';
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
-  styleUrls: ['./cv.component.css'],
-  providers : [ListPersonneService]
+  styleUrls: ['./cv.component.css']
 })
 export class CvComponent implements OnInit {
   listePersonnes : Personne[] = [];
@@ -28,9 +27,7 @@ export class CvComponent implements OnInit {
     this.selectedPers = pers;
   }
 
-  addNewPerson() {
-    this.listPers.addPersonne();
-  }
+
 
   showList() {
     console.log(this.listPers.getListePersonnes());

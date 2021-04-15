@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NidhalComponent } from './nidhal/nidhal.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParentComponent } from './parent/parent.component';
 import { CvComponent } from './cv/cv.component';
 import { ListeComponent } from './liste/liste.component';
@@ -30,6 +30,8 @@ import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoImagePipe } from './no-image.pipe';
 import { LoginComponent } from './login/login.component';
+import { AddReactComponent } from './add-react/add-react.component';
+import { SubModule } from './sub/sub.module';
 
 
 @NgModule({
@@ -58,12 +60,15 @@ import { LoginComponent } from './login/login.component';
     UpdateComponent,
     NotFoundComponent,
     NoImagePipe,
-    LoginComponent
+    LoginComponent,
+    AddReactComponent
   ],
   imports: [
   BrowserModule,
     FormsModule,
-    DMWM_ROUTING
+    ReactiveFormsModule,
+    DMWM_ROUTING,
+    SubModule
   ],
   providers: [FirstServiceService, SecondService],
   bootstrap: [AppComponent]

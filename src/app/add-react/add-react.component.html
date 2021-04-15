@@ -1,0 +1,32 @@
+<form [formGroup]="addForm" (ngSubmit)="showForm()">
+    <div class="form-group" formGroupName="infos">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+        <div *ngIf="addForm.get('infos.name').errors['required'] && addForm.get('infos.name').touched" class="alert alert-warning">Le "name" est obligatoire</div>
+        <div *ngIf="addForm.get('infos.name').errors['nameIsForbidden'] && addForm.get('infos.name').touched" class="alert alert-warning">"walid" et "yasmine" sont bannis</div>
+    
+        <label for="age">Age</label>
+        <input type="text" class="form-control" id="age" formControlName="age">
+    </div>
+   
+
+    <label for="email">E-mail</label>
+    <input type="text" class="form-control" id="email" formControlName="e-address">
+    <div *ngIf="addForm.get('e-address').invalid && addForm.get('e-address').touched" class="alert alert-danger">Veuillez saisir une adresse mail valide !</div>
+
+    <label for="gender">Gender</label>
+    <select id="gender" class="form-control">
+        <option *ngFor="let g of listGenders" [value]="g">{{ g }} </option>
+    </select>
+
+    <div formArrayName="skills">
+        <p>Your Skills</p>
+        <button class="btn btn-success" (click)="addSkill()">Add Skill</button>
+        <div class="form-group" *ngFor="let s of FormSkills.controls; let i = index">
+            <input class="form-control" [formControl]= "FormSkills.controls[i]">
+        </div>
+
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+</form>

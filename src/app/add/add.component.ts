@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ListPersonneService } from '../list-personne.service';
 
 @Component({
   selector: 'app-add',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private persServ: ListPersonneService,
+    private router:  Router) { }
 
   ngOnInit(): void {
+  }
+
+  addNewPerson(newP) {
+    console.log(newP);
+    this.persServ.addPersonne(newP);
+    console.log(this.persServ.getListePersonnes());
+    
+    this.router.navigateByUrl("/cv");
+    
   }
 
 }

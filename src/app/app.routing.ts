@@ -1,5 +1,6 @@
 import { NgModel } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
+import { AddReactComponent } from "./add-react/add-react.component";
 import { AddComponent } from "./add/add.component";
 import { CvComponent } from "./cv/cv.component";
 import { HomeComponent } from "./home/home.component";
@@ -20,8 +21,10 @@ const myRoutes : Routes = [
         {path : 'edit/:id', component : UpdateComponent}
     ]}, 
     {path : 'servers', component : ManageServersComponent}, 
+    {path : 'add-react', component : AddReactComponent}, 
     {path : 'login', component : LoginComponent}, 
     {path : 'msword', component : MsWordComponent},
+    {path : 'serveur', loadChildren: '../app/sub/sub.module#SubModule'},
     {path: 'not-found', component: NotFoundComponent },
     {path: '**', redirectTo: 'not-found' }
 
