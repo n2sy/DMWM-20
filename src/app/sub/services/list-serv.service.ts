@@ -16,11 +16,15 @@ export class ListServService {
       status : 'online'
     },
     {
-      id : 1,
+      id : 3,
       name : 'Serveur de test',
       status : 'offline'
     }
   ]
 
   constructor() { }
+
+  getServeurById(id) {
+    return this.tabServeurs.find(s => s.id == id)
+  }
 }

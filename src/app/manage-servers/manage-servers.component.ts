@@ -7,6 +7,7 @@ import { Serveur } from '../model/serveur';
   styleUrls: ['./manage-servers.component.css']
 })
 export class ManageServersComponent implements OnInit {
+ 
   myPromise = new Promise((resolve, reject) => {
     setTimeout(()=> {
       resolve("DMWM")

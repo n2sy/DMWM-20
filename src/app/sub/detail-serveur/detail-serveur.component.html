@@ -1,1 +1,8 @@
-<p>detail-serveur works!</p>
+<strong> {{ myServeur.name }} </strong>
+<br>
+<p>Le statut du serveur est {{ myServeur.status }} </p>
+<br>
+
+<button [disabled]="btnShow" (click)="goToEdit()" class="btn btn-info">Editer</button>
+<br>
+<i *ngIf="btnShow">Impossible d'editer ce serveur</i>
