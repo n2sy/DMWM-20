@@ -5,16 +5,16 @@ import { Personne } from '../model/personne';
 @Component({
   selector: 'app-liste',
   templateUrl: './liste.component.html',
-  styleUrls: ['./liste.component.css']
+  styleUrls: ['./liste.component.css'],
 })
 export class ListeComponent implements OnInit {
-  lstPers : Personne[];
+  @Input() lstPers = [];
   @Output() persToCv = new EventEmitter<Personne>();
-  
-  constructor(private persServ : ListPersonneService) { }
+
+  constructor(private persServ: ListPersonneService) {}
 
   ngOnInit(): void {
-    this.lstPers = this.persServ.getListePersonnes();
+    //this.lstPers = this.persServ.getListePersonnes();
   }
 
   persReceived(pers) {
@@ -23,7 +23,5 @@ export class ListeComponent implements OnInit {
 
   showList() {
     console.log(this.persServ.getListePersonnes());
-    
   }
-
 }

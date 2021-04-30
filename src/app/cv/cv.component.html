@@ -1,10 +1,10 @@
 <ng-content></ng-content>
 <div class="row">
     <div class="col-md-5">
-        <app-liste (persToCv)="RecupererPers($event)"></app-liste>
+        <app-liste [lstPers]=listePersonnes (persToCv)="RecupererPers($event)"></app-liste>
     </div>
     <div class="col-md-7">
-        <app-detail [persSelected]="selectedPers" ></app-detail>
+        <app-detail [persSelected]="selectedPers"></app-detail>
     </div>
 </div>
 <router-outlet></router-outlet>

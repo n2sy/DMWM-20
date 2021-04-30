@@ -6,22 +6,19 @@ import { RecrueService } from '../recrue.service';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+  styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent implements OnInit {
-  @Input() persSelected : Personne;
-  constructor(private recService : RecrueService,
-    private router : Router) { }
+  @Input() persSelected;
+  constructor(private recService: RecrueService, private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ajouterRecrue() {
     this.recService.addRecrue(this.persSelected);
   }
 
   goDetails() {
-    this.router.navigate(['cv', this.persSelected.id ]);
+    this.router.navigate(['cv', this.persSelected._id]);
   }
-
 }

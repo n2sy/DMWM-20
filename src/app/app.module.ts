@@ -33,6 +33,7 @@ import { LoginComponent } from './login/login.component';
 import { AddReactComponent } from './add-react/add-react.component';
 import { SubModule } from './sub/sub.module';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -61,16 +62,17 @@ import { SubModule } from './sub/sub.module';
     NotFoundComponent,
     NoImagePipe,
     LoginComponent,
-    AddReactComponent
+    AddReactComponent,
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     DMWM_ROUTING,
-    SubModule
+    SubModule,
+    HttpClientModule,
   ],
   providers: [FirstServiceService, SecondService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
