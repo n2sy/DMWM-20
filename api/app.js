@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 //const bodyParser = require("body-parser");
 
 const cvRoutes = require("./routes/cv");
+const authRoutes = require("./routes/auth");
 
 const app = express();
 
@@ -17,6 +18,8 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
     next();
 })
+
+app.use('/auth', authRoutes);
 app.use('/cv', cvRoutes);
 
 

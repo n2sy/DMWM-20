@@ -40,12 +40,20 @@ export class InfosComponent implements OnInit {
 
   onDelete() {
     if (confirm('Voulez-vous réellement supprimer cette personne ?')) {
-      this.persServ.deletePersonne(this.pers);
-      this.router.navigateByUrl('/cv');
+      this.persServ.deletePersonneAPI(this.pers).subscribe(
+        (reponse) => {
+          console.log(reponse);
+
+          this.router.navigateByUrl('/cv');
+        },
+        (error) => {
+          console.log('Problem with deletePerson', error);
+        }
+      );
     }
   }
 
   goToUpdate() {
-    this.router.navigate(['/cv', 'edit', this.pers.id]);
+    this.router.navigate(['/cv', 'edit', this.pers['_id']]);
   }
 }

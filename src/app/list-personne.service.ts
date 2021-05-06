@@ -22,13 +22,17 @@ export class ListPersonneService {
     //[this.listePersonnes[0], this.listePersonnes[1],....]
   }
 
-  getListePersonnesAPI(): Observable<Personne[]> {
-    return this.http.get<Personne[]>(this.link);
+  getListePersonnesAPI() {
+    return this.http.get(this.link);
   }
 
   addPersonne(newP) {
     newP.id = this.listePersonnes[this.listePersonnes.length - 1].id + 1;
     this.listePersonnes.push(newP);
+  }
+
+  addPersonneAPI(newP) {
+    return this.http.post(this.link, newP);
   }
 
   getPersonById(id) {
@@ -45,8 +49,16 @@ export class ListPersonneService {
     this.listePersonnes.splice(i, 1);
   }
 
+  deletePersonneAPI(p) {
+    return this.http.delete(`${this.link}/${p._id}`);
+  }
+
   updatePersonne(p) {
     let i = this.listePersonnes.indexOf(p);
     this.listePersonnes[i] = p;
+  }
+
+  updatePersonneAPI(p) {
+    return this.http.put(`${this.link}/${p._id}`, p);
   }
 }
