@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Personne } from './model/personne';
@@ -32,6 +32,24 @@ export class ListPersonneService {
   }
 
   addPersonneAPI(newP) {
+    /* Version avec HttpParams */
+    // let mytoken = localStorage.getItem('mytoken');
+    // if (mytoken) {
+    //   let p = new HttpParams().set('token', mytoken);
+    //   return this.http.post(this.link, newP, { params: p });
+    // }
+    // return this.http.post(this.link, newP);
+
+    /*Version avec HttpHeaders */
+    // let mytoken = localStorage.getItem('mytoken');
+    // if (mytoken) {
+    //   let header = new HttpHeaders({
+    //     Authorization: 'bearer ' + mytoken,
+    //   });
+    //   return this.http.post(this.link, newP, { headers: header });
+    // }
+    // return this.http.post(this.link, newP);
+
     return this.http.post(this.link, newP);
   }
 

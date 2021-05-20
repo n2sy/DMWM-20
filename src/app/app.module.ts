@@ -34,6 +34,9 @@ import { AddReactComponent } from './add-react/add-react.component';
 import { SubModule } from './sub/sub.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LoggedInterceptorProvider } from './login.interceptor';
+import { LoginGuard } from './login.guard';
+import { LogoutGuard } from './logout.guard';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,13 @@ import { HttpClientModule } from '@angular/common/http';
     SubModule,
     HttpClientModule,
   ],
-  providers: [FirstServiceService, SecondService],
+  providers: [
+    FirstServiceService,
+    SecondService,
+    LoggedInterceptorProvider,
+    LoginGuard,
+    LogoutGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

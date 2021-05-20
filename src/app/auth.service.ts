@@ -13,7 +13,13 @@ export class AuthService {
     return this.http.post(`${this.link}/login`, identifiants);
   }
 
-  seDeconnecter() {}
+  seDeconnecter() {
+    localStorage.removeItem('mytoken');
+  }
 
-  estConnecte() {}
+  estConnecte() {
+    let mytoken = localStorage.getItem('mytoken');
+    if (mytoken) return true;
+    return false;
+  }
 }
