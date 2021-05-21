@@ -37,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoggedInterceptorProvider } from './login.interceptor';
 import { LoginGuard } from './login.guard';
 import { LogoutGuard } from './logout.guard';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { LogoutGuard } from './logout.guard';
     NoImagePipe,
     LoginComponent,
     AddReactComponent,
+    SearchbarComponent,
   ],
   imports: [
     BrowserModule,

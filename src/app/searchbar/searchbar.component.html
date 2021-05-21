@@ -1,0 +1,7 @@
+<input #in type="text" class="form-control" (keyup)="searchPerson(in.value)">
+<ol>
+    <li class="list-group-item" *ngFor="let p of filtredPerson" (click)="goToDetails(p, in)">
+        <img src="../../assets/{{p.avatar | noImage}}">
+        {{p.prenom }} {{p.nom}}
+    </li>
+</ol>

@@ -5,7 +5,10 @@ exports.getAllPersons = async (req, res) => {
 
     /* avec async await */
     try {
-        const result = await Personne.find();
+        const filter = req.query.filter
+        const result = await Personne.find({
+            "prenom": new RegExp(filter)
+        });
         res.status(200).json({
             allPersons: result
         });

@@ -26,6 +26,11 @@ export class ListPersonneService {
     return this.http.get(this.link);
   }
 
+  getFiltredListePersonnesAPI(subname) {
+    let p = new HttpParams().set('filter', subname);
+    return this.http.get(this.link, { params: p });
+  }
+
   addPersonne(newP) {
     newP.id = this.listePersonnes[this.listePersonnes.length - 1].id + 1;
     this.listePersonnes.push(newP);
